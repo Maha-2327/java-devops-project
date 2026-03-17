@@ -8,26 +8,21 @@ shell: bash
 
 steps:
   - type: Command
-    name: "Check OS"
-    command: |
-      cat /etc/os-release
-
-  - type: Command
-    name: "Install Java (if not exists)"
-    command: |
-      java -version || (sudo yum install -y java-11-openjdk-devel || sudo dnf install -y java-11-openjdk-devel)
-
-  - type: Command
-    name: "Check Java Version"
+    name: "Check Java"
     command: |
       java -version
 
   - type: Command
-    name: "Compile Java"
+    name: "List Files"
+    command: |
+      ls -l
+
+  - type: Command
+    name: "Compile"
     command: |
       javac Calculator.java
 
   - type: Command
-    name: "Run Program"
+    name: "Run"
     command: |
       java Calculator
