@@ -10,8 +10,7 @@ steps:
   - type: Command
     name: "Install Java"
     command: |
-      sudo apt update
-      sudo apt install -y openjdk-11-jdk
+      sudo yum install -y java-11-openjdk-devel
 
   - type: Command
     name: "Compile Java Program"
